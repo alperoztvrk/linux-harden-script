@@ -1,0 +1,10 @@
+{ 
+ "ssh": true,
+ "ufw": true,
+ "fail2ban": true,
+ "permission": true,
+ "service": true
+}
+
+
+

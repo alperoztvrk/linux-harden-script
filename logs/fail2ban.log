@@ -1,0 +1,6 @@
+[2025-05-29 11:43:53] Starting fail2ban module...
+Fail2Ban Hardening Started.
+Synchronizing state of fail2ban.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable fail2ban
+Fail2Ban Hardening Completed.
+[2025-05-29 11:43:54] fail2ban module completed successfully.
