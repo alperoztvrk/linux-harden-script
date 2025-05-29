@@ -1,0 +1,5 @@
+logs/
+*.log
+world_writable_files.txt
+*.bak
+*.swp

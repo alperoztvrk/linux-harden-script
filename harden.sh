@@ -26,7 +26,7 @@ run_module() {
 # Script Start
 log "Linux Hardening Script Started"
 
-MODULES=("ssh" "ufw" "fail2ban" "permission" "service")
+MODULES=("ssh" "ufw" "fail2ban" "permissions" "service")
 
 for MODULE in "${MODULES[@]}"; do
     run_module "$MODULE"
