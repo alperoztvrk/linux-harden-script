@@ -2,7 +2,6 @@
 
 echo "Automated Security Updates has been started.."
 
-# unattended-upgrades paketi kurulu mu kontrol et
 if ! command -v unattended-upgrade &> /dev/null
 then
     echo "unattended-upgrades is not installed, installing..."
@@ -10,7 +9,6 @@ then
     sudo apt-get install -y unattended-upgrades
 fi
 
-# unattended-upgrades konfigürasyon dosyasını oluştur
 UNATTENDED_CONFIG="/etc/apt/apt.conf.d/20auto-upgrades"
 
 sudo bash -c "cat > $UNATTENDED_CONFIG" <<EOF
