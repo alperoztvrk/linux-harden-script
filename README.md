@@ -42,7 +42,7 @@ Each module generates a separate log file under the logs/ directory. Examples:
 	•	Additional modules for advanced security (e.g., AppArmor, auditd) are planned for future updates.
 
 👨‍💻 Developer
-	•	Alper Ozturk – My GitHub Profile
+	•	Alper Ozturk 
 
 ⸻
 
