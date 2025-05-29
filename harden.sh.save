@@ -1,33 +1,33 @@
 #!/bin/bash
 
-# Klasör ve log dosyası ayarları
+
 LOGDIR="./logs"
 mkdir -p "$LOGDIR"
 LOGFILE="$LOGDIR/harden_$(date +'%Y%m%d_%H%M%S').log"
 
 CONFIG="./config.json"
 
-# Loglama fonksiyonu
+
 log() {
     echo "[$(date +'%Y-%m-%d %H:%M:%S)] $1" >> "$LOGFILE"
 }
 
-# Hem terminale hem log dosyasına yaz
+
 summary() {
     echo -e "$1"
     log "$1"
 }
 
-# Modül kontrol fonksiyonu (config.json'dan)
+
 module_enabled() {
     local module=$1
     jq -e ".${module} == true" "$CONFIG" >/dev/null 2>&1
 }
 
-# Başlangıç
+
 summary "[INFO] Linux Hardening Script started"
 
-# Modül: SSH Hardening
+# Module: SSH Hardening
 if module_enabled "ssh"; then
     summary "\n[INFO] Starting ssh module..."
     source ./modules/ssh_hardening.sh
@@ -36,7 +36,7 @@ else
     summary "[INFO] ssh module skipped."
 fi
 
-# Modül: UFW Hardening
+# Module: UFW Hardening
 if module_enabled "ufw"; then
     summary "\n[INFO] Starting ufw module..."
     source ./modules/ufw_hardening.sh
@@ -45,7 +45,7 @@ else
     summary "[INFO] ufw module skipped."
 fi
 
-# Modül: Fail2Ban Hardening
+# Module: Fail2Ban Hardening
 if module_enabled "fail2ban"; then
     summary "\n[INFO] Starting fail2ban module..."
     source ./modules/fail2ban_hardening.sh
@@ -54,7 +54,7 @@ else
     summary "[INFO] fail2ban module scc	kipped."
 fi
 
-# Modül: Permissions Hardening
+# Module: Permissions Hardening
 if module_enabled "permissions"; then
     summary "\n[INFO] Starting permissions module..."
     source ./modules/permissions_hardening.sh
@@ -63,7 +63,7 @@ else
     summary "[INFO] permissions module skipped."
 fi
 
-# Modül: Service Hardening
+# Module: Service Hardening
 if module_enabled "service"; then
     summary "\n[INFO] Starting service module..."
     source ./modules/service_hardening.sh
