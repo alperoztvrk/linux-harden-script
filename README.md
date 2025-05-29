@@ -21,10 +21,12 @@ This script is designed to apply essential Linux system security measures quickl
 
 ## 🚀 Installation & Usage
 
+```bash
 git clone https://github.com/alperoztvrk/linux-harden-script.git
 cd linux-harden-script
 chmod +x harden.sh
 sudo ./harden.sh
+```
 
 ⚠️ WARNING: This script must be executed with sudo privileges.
 
